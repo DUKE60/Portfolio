@@ -1,76 +1,77 @@
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
 body {
-    margin: 0;
     background-color: #98EEFA;
-    font-family: 'Exo 2', sans-serif;
-}
 
-.container {
-    width: 50%;
-    margin: 0 auto;
-}
-
-header {
-    text-align: right;
-    position: fixed;
-    z-index: 999;
-    width: 100%;
+    overflow-x: hidden;
 }
 
 .logo {
-    float: left;
-    width: 300px;
+    width: 200px;
     height: auto;
-    padding: 30px;
+    margin: 2rem;
 }
 
-nav {
-    text-align: right;
-}
-
-nav ul {
-   margin: 0;
-   padding: 0;
-   list-style: none; 
-}
-
-nav li {
-    display: inline-block;
-    font-size: 20px;
+.navigation {
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Exo 2', sans-serif;
     font-weight: 600;
-    margin-bottom: 1em;
-    margin-left: 1em;
-    padding-top: 50px;
-    color: #042940;  
-
-    position: relative;
 }
 
-nav a {
-    color: #042940; 
+.primary-navigation {
+    list-style:none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+
+@media (max-width: 35em) {
+    .primary-navigation {
+        --gap: 2em;
+
+        position: fixed;
+        z-index: 1000;
+        z-index: 1000;
+        inset: 0 0 0 0;
+
+        flex-direction: column;
+        padding: min(30vh, 10rem) 15rem;
+        align-items: center;
+        background: #30e07a;
+
+        transform: translateX(100%);
+    }
+.primary-navigation[data-visible="true"] {
+    transform: translateX(0%);
+}
+
+.mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    background: url("Images/Waves.svg");
+    background-repeat: no-repeat;
+    width: 3.5rem;
+    aspect-ratio: 1;
+    border: 0;
+    top: 2rem;
+    right: 2rem;
+}
+    
+}
+
+.primary-navigation a {
     text-decoration: none;
 }
 
-nav a:hover {
-    font-weight: 650;
-}
-
-nav a::before {
-    content: '';
-    display: block;
-    height: 10px;
-    background-color: #042940;
-
-    position: absolute;
-    top: 0;
-    width: 0%;
-
-    transition: all ease-in-out 250ms;
-}
-
-nav a:hover::before {
-    width: 100%;
-}
-
-logo a:hover {
-    background-color: #04D98B;
+#work {
+    font-weight: 800;
 }

@@ -5,6 +5,8 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="index.css">
 
+    <script src="nav.js"></script>
+
     <!-- Google Font Exo 2 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,29 +14,38 @@
 
     </head>
 
-
-
 <body>
-    <header class="navigation">
-        <div class="container">
-            <a href="#"><img src="images/Adrian Duke.png" alt="Adrian Duke" class="logo"></a>
-            <nav class="inline-block">
-            <ul>
-                <li class="navBold"><a href="#">Work</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Play</a></li>
-                <li><a href="#">Resume</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul> 
-        </nav>  
+    <header class="navigation flex">
 
-        </div>
-    </header>
+    <!-- Logo -->
+    <div>
+      <a href="#"><img src="images/Adrian Duke.png" alt="Adrian Duke" class="logo"></a>
+    </div>
+
+    <button class="mobile-nav-toggle" 
+    aria-controls="primary-navigation" aria-expanded="false">
+    </button>
 
 
 
+    <nav>
+        
+        <ul id="primary-navigation" 
+        data-visible="false" 
+        class="primary-navigation flex">
+            <li id="work" class="active">
+                <a href="#">Work</a>
+            <li>
+                <a href="#">About</a>
+            <li>
+                <a href="#">Resume</a>
+            <li>
+                <a href="#">Contact</a>
+            </ul>
+    </nav>
+</header>
 
-    
+
 </body>
 
 
