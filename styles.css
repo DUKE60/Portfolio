@@ -22,6 +22,11 @@ body {
     font-weight: 600;
 }
 
+#primary-navigation
+{
+    color: #042940;
+}
+
 .primary-navigation {
     list-style:none;
     padding: 0;
